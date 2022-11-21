@@ -36,7 +36,7 @@ function findParents(tree) {
 }
 
 
-let sample = require('shift-parser').parseScript('0 + 1');
+let sample = require('sp-shift-parser').parseScript('0 + 1');
 
 console.log('Count:');
 console.log(countNodes(sample));

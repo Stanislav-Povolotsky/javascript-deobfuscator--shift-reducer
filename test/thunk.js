@@ -17,7 +17,7 @@
 const assert = require('assert');
 
 const { default: reduce, thunkedReduce, MonoidalReducer, ThunkedMonoidalReducer, LazyCloneReducer, thunkify, thunkifyClass, memoize } = require('../');
-const { parseScript } = require('shift-parser');
+const { parseScript } = require('sp-shift-parser');
 const spec = require('shift-spec');
 
 

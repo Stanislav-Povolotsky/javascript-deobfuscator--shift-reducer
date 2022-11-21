@@ -17,7 +17,7 @@
 const assert = require('assert');
 
 const { MonoidalReducer, default: reduce } = require('../');
-const { parseModule } = require('shift-parser');
+const { parseModule } = require('sp-shift-parser');
 
 suite('MonoidalReducer', () => {
 

@@ -1,6 +1,6 @@
 'use strict';
 
-const { parseScript } = require('shift-parser');
+const { parseScript } = require('sp-shift-parser');
 const { thunkedReduce, LazyCloneReducer, thunkify, memoize } = require('..');
 
 class IncrementingReducer extends LazyCloneReducer {

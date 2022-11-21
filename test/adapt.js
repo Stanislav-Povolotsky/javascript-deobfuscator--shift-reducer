@@ -19,7 +19,7 @@
 const assert = require('assert');
 
 const { reduce, PlusReducer, ConcatReducer, adapt } = require('../');
-const { parseModule } = require('shift-parser');
+const { parseModule } = require('sp-shift-parser');
 
 suite('adapt', () => {
   test('adapt adapts', () => {

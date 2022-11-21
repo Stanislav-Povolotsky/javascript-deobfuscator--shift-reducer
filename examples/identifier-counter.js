@@ -1,4 +1,4 @@
-const { parseScript } = require('shift-parser');
+const { parseScript } = require('sp-shift-parser');
 const { reduce, MonoidalReducer } = require('..');
 
 class IdentifierCounter extends MonoidalReducer {
