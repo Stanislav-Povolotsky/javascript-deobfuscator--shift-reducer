@@ -26,9 +26,9 @@ function toVal(isThunked, { name, type }) {
       return `${sanitize(name)} == null ? this.identity : ${sanitize(name)}${isThunked ? '()' : ''}`;
     case 'List':
       if (type.argument.typeName === 'Maybe') {
-        return `this.append(...${sanitize(name)}.filter(n => n != null))`;
+        return `this.append_args(${sanitize(name)}.filter(n => n != null))`;
       }
-      return `this.append(...${sanitize(name)})`;
+      return `this.append_args(${sanitize(name)})`;
     default:
       return sanitize(name) + (isThunked ? '()' : '');
   }
@@ -65,6 +65,7 @@ module.exports = class MonoidalReducer {
       throw new TypeError('Monoid must provide a \`concat\` method');
     }
     this.append = (...args) => args.reduce(concat, identity);
+    this.append_agrs = (args) => args.reduce(concat, identity);
   }
 `;
 
@@ -98,6 +99,7 @@ module.exports = class MonoidalReducer {
       }
     }
     this.append = (...args) => args.reduce(concatThunk, identity);
+    this.append_agrs = (args) => args.reduce(concat, identity);
   }
 `;
 

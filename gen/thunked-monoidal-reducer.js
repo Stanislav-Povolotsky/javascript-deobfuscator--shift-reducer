@@ -44,6 +44,7 @@ module.exports = class MonoidalReducer {
       }
     }
     this.append = (...args) => args.reduce(concatThunk, identity);
+    this.append_agrs = (args) => args.reduce(concat, identity);
   }
 
   reduceArrayAssignmentTarget(node, { elements, rest }) {
@@ -55,7 +56,7 @@ module.exports = class MonoidalReducer {
   }
 
   reduceArrayExpression(node, { elements }) {
-    return this.append(...elements.filter(n => n != null));
+    return this.append_args(elements.filter(n => n != null));
   }
 
   reduceArrowExpression(node, { params, body }) {
@@ -107,7 +108,7 @@ module.exports = class MonoidalReducer {
   }
 
   reduceBlock(node, { statements }) {
-    return this.append(...statements);
+    return this.append_args(statements);
   }
 
   reduceBlockStatement(node, { block }) {
@@ -195,7 +196,7 @@ module.exports = class MonoidalReducer {
   }
 
   reduceExportFrom(node, { namedExports }) {
-    return this.append(...namedExports);
+    return this.append_args(namedExports);
   }
 
   reduceExportFromSpecifier(node) {
@@ -207,7 +208,7 @@ module.exports = class MonoidalReducer {
   }
 
   reduceExportLocals(node, { namedExports }) {
-    return this.append(...namedExports);
+    return this.append_args(namedExports);
   }
 
   reduceExpressionStatement(node, { expression }) {
@@ -323,7 +324,7 @@ module.exports = class MonoidalReducer {
   }
 
   reduceObjectExpression(node, { properties }) {
-    return this.append(...properties);
+    return this.append_args(properties);
   }
 
   reduceReturnStatement(node, { expression }) {
@@ -371,7 +372,7 @@ module.exports = class MonoidalReducer {
   }
 
   reduceSwitchDefault(node, { consequent }) {
-    return this.append(...consequent);
+    return this.append_args(consequent);
   }
 
   reduceSwitchStatement(node, { discriminant, cases }) {
@@ -415,7 +416,7 @@ module.exports = class MonoidalReducer {
   }
 
   reduceVariableDeclaration(node, { declarators }) {
-    return this.append(...declarators);
+    return this.append_args(declarators);
   }
 
   reduceVariableDeclarationStatement(node, { declaration }) {
