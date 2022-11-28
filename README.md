@@ -15,7 +15,7 @@ This module provides several reducers and related tooling for [Shift format](htt
 ## Installation
 
 ```sh
-npm install shift-reducer
+npm install sp-shift-reducer
 ```
 
 
