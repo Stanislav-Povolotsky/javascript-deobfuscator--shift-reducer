@@ -1,6 +1,6 @@
 {
   "name": "sp-shift-reducer",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "description": "reducer for the Shift AST format",
   "author": "Shape Security",
   "homepage": "https://github.com/Stanislav-Povolotsky/javascript-deobfuscator--shift-reducer-js",
@@ -26,7 +26,7 @@
     "eslint": "5.6.1",
     "everything.js": "^1.0.3",
     "mocha": "^8.1.3",
-    "sp-shift-parser": "7.0.0",
+    "sp-shift-parser": "^8.0.0",
     "shift-spec": "2019.0.0"
   },
   "keywords": [

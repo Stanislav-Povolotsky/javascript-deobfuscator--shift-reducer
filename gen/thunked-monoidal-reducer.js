@@ -44,7 +44,7 @@ module.exports = class MonoidalReducer {
       }
     }
     this.append = (...args) => args.reduce(concatThunk, identity);
-    this.append_agrs = (args) => args.reduce(concat, identity);
+    this.append_args = (args) => args.reduce(concat, identity);
   }
 
   reduceArrayAssignmentTarget(node, { elements, rest }) {
